@@ -3,149 +3,486 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מבנה אתר - דוגמה</title>
-    <!-- CSS של Bootstrap 5 (RTL) -->
+    <title>HoldOn - מדריך הבוקר והכריכים</title>
+    <!-- Bootstrap 5 RTL -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-    <!-- קובץ עיצוב חיצוני -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- תפריט ניווט (Navbar) -->
+    <!-- תפריט ניווט -->
     <nav class="navbar navbar-expand-lg navbar-light pt-3">
         <div class="container">
-            <!-- לוגו -->
-            <a class="navbar-brand" href="#">
-                <span class="logo-text">[הלוגו שלך]</span>
-            </a>
+            <a class="navbar-brand fw-bold fs-3 text-purple" href="#">HoldOn</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">למה זה חשוב?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">השילוב המנצח</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">רשימת הכריכים</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">שאלות ותשובות</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#sugar-rollercoaster">מה קורה לסוכר?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#how-to-build">איך בונים כריך?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sandwich-grid">רשימת הכריכים</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#holdon-morning">שילוב הבוקר</a></li>
                 </ul>
-                <a class="btn btn-nav-primary ms-2" href="#">לרכישה</a>
+                <a class="btn btn-purple-pill ms-2" href="#products">לרכישה</a>
             </div>
         </div>
     </nav>
 
-    <!-- אזור הגיבור (Hero Section) -->
-    <div class="container my-5 py-5">
+    <!-- 1. אזור הגיבור (Hero) -->
+    <section class="container my-5 py-4">
         <div class="row align-items-center">
-            
-            <!-- טור התמונה / כרטיסייה (שמאל) -->
-            <div class="col-lg-5 mb-5 mb-lg-0">
-                <div class="card-container">
-                    <img src="https://via.placeholder.com/400x400.png?text=תמונת כריך דוגמה" alt="דוגמת קופסת אוכל" class="placeholder-image">
-                    <div class="mt-4 text-start">
-                        <span class="badge bg-warning text-dark p-2 rounded-pill">כריך מאוזן</span>
-                        <h5 class="mt-2 text-primary">כריך גבינה וירקות קליל</h5>
-                        <p class="text-muted small">עשיר בחלבון וסיבים תזונתיים.</p>
-                    </div>
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="white-card text-center p-4">
+                    <img src="https://via.placeholder.com/350x350.png?text=HoldOn+Sandwich" alt="כריך" class="img-fluid rounded-4 mb-3">
+                    <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">כריך מאוזן</span>
+                    <h5 class="mt-2 text-purple fw-bold">כריך גבינה וירקות קליל</h5>
+                    <p class="text-muted small mb-0">עשיר בחלבון וסיבים תזונתיים.</p>
                 </div>
             </div>
-
-            <!-- טור הטקסט (ימין) -->
             <div class="col-lg-7 text-lg-start text-center">
-                <span class="badge bg-light text-dark p-2 mb-3 rounded-pill hero-badge">📚 מדריך פרקטי לחזרה לבית הספר</span>
-                <h1 class="display-4 main-title">מה שמכניסים <span class="highlight">לקופסת האוכל</span> משפיע על כל היום!</h1>
+                <span class="badge bg-light text-dark p-2 mb-3 rounded-pill border">📚 מדריך פרקטי לחזרה לבית הספר</span>
+                <h1 class="display-4 main-title fw-bold">מה שמכניסים <span class="highlight">לקופסת האוכל</span> משפיע על כל היום!</h1>
                 <p class="lead text-muted my-4">רשימת כריכים בריאים ומזינים שיעזרו לילדים להגיע לשיעור עם אנרגיה יציבה - בלי "רכבת הרים" של סוכר.</p>
-                
-                <!-- קטגוריות סינון -->
-                <div class="my-4 d-flex flex-wrap justify-content-lg-start justify-content-center">
-                    <button class="category-filter active">הכל</button>
-                    <button class="category-filter">חלבי</button>
-                    <button class="category-filter">בשרי/דגים</button>
-                    <button class="category-filter">צמחוני/טבעוני</button>
-                </div>
-
-                <a href="#" class="btn btn-cta-main mt-3">רשימת הכריכים שלי</a>
+                <a href="#sandwich-grid" class="btn btn-purple-pill fs-5 px-4 py-2">רשימת הכריכים שלי</a>
             </div>
-
         </div>
-    </div>
+    </section>
 
-    <!-- אזור תחתון: הקשר בין ארוחת הבוקר לריכוז -->
-    <div class="container text-center my-5 py-5">
-        <span class="badge bg-light text-success fw-bold px-3 py-2 rounded-pill mb-3" style="border: 1px solid #d1e7dd;">ריכוז מתחיל גם בצלחת</span>
-        <h2 class="main-title mt-2 fw-bold">מה הקשר בין ארוחת הבוקר, הסוכר בדם והריכוז?</h2>
-        <div class="row justify-content-center">
+    <!-- 2. מה קורה כשהסוכר הדם עולה מהר - ואז יורד? (רכבת ההרים של הסוכר) -->
+    <section id="sugar-rollercoaster" class="container text-center my-5 py-5">
+        <span class="badge bg-light text-success fw-bold px-3 py-2 rounded-pill mb-3 border border-success-subtle">רכבת ההרים של הסוכר</span>
+        <h2 class="text-purple fw-bold mb-3">מה קורה כשהסוכר הדם עולה מהר – ואז יורד?</h2>
+        <div class="row justify-content-center mb-5">
             <div class="col-md-9">
-                <p class="text-muted mt-3 mb-5">
-                    פחמימות הן מקור אנרגיה חשוב. אבל כשהארוחה בנויה בעיקר מסוכר או מקמח לבן, האנרגיה עשויה לעלות מהר – ולא תמיד להחזיק לאורך זמן. שילוב של פחמימה איכותית עם חלבון, ירקות ושומן טוב מאיט את העיכול ותומך בשחרור ממונו יותר של גלוקוז לדם.
+                <p class="text-muted">
+                    אחרי ארוחה שמבוססת בעיקר על סוכר או פחמימות שמתעכלות מהר, הגלוקוז נכנס לדם במהירות. הגוף מפריש אינסולין כדי להעביר את הגלוקוז לתאים, ולאחר השיא עלולה להגיע ירידה מהירה יחסית. אצל חלק מהילדים התנודות האלה מורגשות היטב במהלך השיעור.
                 </p>
             </div>
         </div>
 
-        <!-- שלוש כרטיסיות -->
-        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center mb-5">
-            <!-- כרטיסייה 1: פחמימה לבד -->
+        <div class="row row-cols-1 row-cols-md-3 g-4 mb-4 text-start">
             <div class="col">
-                <div class="info-card-container text-center">
-                    <div class="icon-wrapper mb-3 text-warning fs-3">⚡</div>
-                    <h4 class="card-info-title mt-2">פחמימה לבד</h4>
-                    <p class="card-info-text text-muted mt-3">לחמנייה לבנה עם ממרח מתוק יכולה לתת "בוסט" מהיר – אבל לעיתים השובע קצר יותר והרצון לנשנש חוזר מוקדם.</p>
+                <div class="white-card p-4 h-100">
+                    <div class="fs-2 mb-2">📈</div>
+                    <h4 class="fw-bold text-purple">1. עלייה מהירה</h4>
+                    <p class="text-muted small">מאפה, לחם לבן או ממרח מתוק מתעכלים במהירות ועלולים להעלות את רמת הסוכר בדם בבת אחת. לרגע יכולה להיות תחושה של הרבה אנרגיה.</p>
                 </div>
             </div>
-            <!-- כרטיסייה 2: ארוחה משולבת -->
             <div class="col">
-                <div class="info-card-container text-center">
-                    <div class="icon-wrapper mb-3 text-success fs-3">⚖️</div>
-                    <h4 class="card-info-title mt-2">ארוחה משולבת</h4>
-                    <p class="card-info-text text-muted mt-3">לחם מלא יחד עם מקור חלבון, ירקות וקצת שומן איכותי יוצר ארוחה שלמה יותר, משביעה יותר ומאוזנת יותר.</p>
+                <div class="white-card p-4 h-100">
+                    <div class="fs-2 mb-2">⚙️</div>
+                    <h4 class="fw-bold text-purple">2. תגובת הגוף</h4>
+                    <p class="text-muted small">האינסולין מסייע להכניס את הגלוקוז מהדם אל התאים. כ שמקור האנרגיה היה מהיר וקצר, גם תחושת השובע עלולה להיעלם מוקדם.</p>
                 </div>
             </div>
-            <!-- כרטיסייה 3: יותר בסיס ללמידה -->
             <div class="col">
-                <div class="info-card-container text-center">
-                    <div class="icon-wrapper mb-3 text-danger fs-3">🧠</div>
-                    <h4 class="card-info-title mt-2">יותר בסיס ללמידה</h4>
-                    <p class="card-info-text text-muted mt-3">מחקרים מצביעים על כך שאכילת ארוחת בוקר, לעומת דילוג עליה, עשויה לתמוך בחלק מדדי הקשב והקוגניציה במהלך הבוקר.</p>
+                <div class="white-card p-4 h-100">
+                    <div class="fs-2 mb-2">📉</div>
+                    <h4 class="fw-bold text-purple">3. הירידה המורגשת</h4>
+                    <p class="text-muted small">רעב, עייפות, חוסר שקט, עצבנות ורצון למשהו מתוק יכולים להקשות על הילד לשבת, להתמיד במשימה ולהחזיק קשב לאורך זמן.</p>
                 </div>
             </div>
         </div>
 
-        <!-- פאנל כחול/סגול עם פלוסים -->
-        <div class="info-panel-blue mb-4 py-4">
+        <div class="dark-purple-card p-4 text-start">
+            <h5 class="fw-bold text-white mb-2">ומה הקשר לבעיות קשב וריכוז?</h5>
+            <p class="text-white-50 mb-0 small">תנודות ברמות הסוכר אינן גורמות להפרעת קשב וריכוז, אבל התחושות שהן עלולות ליצור – עייפות, רעב, חוסר שקט ועצבנות – יכולות להיראות כמו קושי בקשב או להקשות עוד יותר על ילד שכבר מתמודד עם קשיי קשב. מחקרים מצביעים על קשר אפשרי בין פרופיל סוכר יציב יותר לאורך הבוקר לבין ביצועים טובים יותר בחלק מדדי הקשב והקוגניציה, אם כי התגובה משתנה מילד לילד.</p>
+        </div>
+    </section>
+
+    <!-- 3. הקשר בין ארוחת הבוקר לריכוז (הפאנל עם הבונוס) -->
+    <section class="container text-center my-5 py-5">
+        <span class="badge bg-light text-success fw-bold px-3 py-2 rounded-pill mb-3 border border-success-subtle">ריכוז מתחיל גם בצלחת</span>
+        <h2 class="text-purple fw-bold mb-3">מה הקשר בין ארוחת הבוקר, הסוכר בדם והריכוז?</h2>
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-9">
+                <p class="text-muted">
+                    פחמימות הן מקור אנרגיה חשוב. אבל כשהארוחה בנויה בעיקר מסוכר או מקמח לבן, האנרגיה עשויה לעלות מהר – ולא תמיד להחזיק לאורך זמן. שילוב של פחמימה איכותית עם חלבון, ירקות ושומן טוב מאיט את העיכול ותומך בשחרור ממותן יותר של גלוקוז לדם.
+                </p>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 mb-5 text-start">
+            <div class="col">
+                <div class="white-card p-4 h-100 text-center">
+                    <div class="fs-2 mb-2 text-warning">⚡</div>
+                    <h4 class="fw-bold text-purple">פחמימה לבד</h4>
+                    <p class="text-muted small mt-3">לחמנייה לבנה עם ממרח מתוק יכולה לתת "בוסט" מהיר – אבל לעיתים השובע קצר יותר והרצון לנשנש חוזר מוקדם.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="white-card p-4 h-100 text-center">
+                    <div class="fs-2 mb-2 text-success">⚖️</div>
+                    <h4 class="fw-bold text-purple">ארוחה משולבת</h4>
+                    <p class="text-muted small mt-3">לחם מלא יחד עם מקור חלבון, ירקות וקצת שומן איכותי יוצר ארוחה שלמה יותר, משביעה יותר ומאוזנת יותר.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="white-card p-4 h-100 text-center">
+                    <div class="fs-2 mb-2 text-danger">🧠</div>
+                    <h4 class="fw-bold text-purple">יותר בסיס ללמידה</h4>
+                    <p class="text-muted small mt-3">מחקרים מצביעים על כך שאכילת ארוחת בוקר, לעומת דילוג עליה, עשויה לתמוך בחלק מדדי הקשב והקוגניציה במהלך הבוקר.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dark-purple-card py-4 mb-4">
             <div class="row align-items-center text-center g-3">
                 <div class="col-md-3">
-                    <div class="fw-bold fs-5">פחמימה איכותית</div>
-                    <div class="small opacity-75">לחם מקמח מלא</div>
+                    <div class="fw-bold fs-5 text-white">פחמימה איכותית</div>
+                    <div class="small text-white-50">לחם מקמח מלא</div>
                 </div>
-                <div class="col-md-1 fs-4 text-info fw-bold">+</div>
+                <div class="col-md-1 fs-3 text-info fw-bold">+</div>
                 <div class="col-md-4">
-                    <div class="fw-bold fs-5">חלבון</div>
-                    <div class="small opacity-75">ביצה, גבינה, טונה או קטניות</div>
+                    <div class="fw-bold fs-5 text-white">חלבון</div>
+                    <div class="small text-white-50">ביצה, גבינה, טונה או קטניות</div>
                 </div>
-                <div class="col-md-1 fs-4 text-info fw-bold">+</div>
+                <div class="col-md-1 fs-3 text-info fw-bold">+</div>
                 <div class="col-md-3">
-                    <div class="fw-bold fs-5">ירקות ושומן טוב</div>
-                    <div class="small opacity-75">צבע, סיבים ושובע</div>
+                    <div class="fw-bold fs-5 text-white">ירקות ושומן טוב</div>
+                    <div class="small text-white-50">צבע, סיבים ושובע</div>
                 </div>
             </div>
         </div>
 
-        <!-- פאנל ירוק בהיר -->
-        <div class="info-panel-cream p-4">
-            <h5 class="fw-bold mb-3 panel-title fs-5">ארוחת בוקר מאוזנת היא התחלה מצוינת – אבל היא לא יכולה להחזיק לבדה יום לימודים שלם.</h5>
-            <p class="text-muted mb-0">כדי לשמור על רצף של אנרגיה ושובע, חשוב שגם ארוחת הביניים בבית הספר תהיה מאוזנת ולא תתבסס רק על פחמימה או ממרח מתוק.</p>
+        <div class="green-cream-card p-4">
+            <h5 class="fw-bold text-success mb-2">ארוחת בוקר מאוזנת היא התחלה מצוינת – אבל היא לא יכולה להחזיק לבדה יום לימודים שלם.</h5>
+            <p class="text-muted mb-0 small">כדי לשמור על רצף של אנרגיה ושובע, חשוב שגם ארוחת הביניים בבית הספר תהיה מאוזנת ולא תתבסס רק על פחמימה או ממרח מתוק.</p>
+        </div>
+    </section>
+
+    <!-- 4. כך בונים כריך שבאמת מחזיק (לא צריך לסבך) -->
+    <section id="how-to-build" class="container text-center my-5 py-5">
+        <span class="badge bg-light text-success fw-bold px-3 py-2 rounded-pill mb-3 border border-success-subtle">לא צריך לסבך</span>
+        <h2 class="text-purple fw-bold mb-3">כך בונים כריך שבאמת מחזיק</h2>
+        <p class="text-muted mb-5">הכריך עצמו הוא לא הבעיה. להפך: כשבונים אותו נכון, הוא יכול להיות ארוחה מזינה, פרקטית ונוחה מאוד לבית הספר.</p>
+
+        <div class="row row-cols-1 row-cols-md-4 g-4 text-center">
+            <div class="col">
+                <div class="white-card p-4 h-100 position-relative">
+                    <div class="number-circle mb-3">1</div>
+                    <h5 class="fw-bold text-purple">בוחרים לחם</h5>
+                    <p class="text-muted small">עדיפות ללחם מקמח מלא שהילד באמת אוהב ומוכן לאכול.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="white-card p-4 h-100 position-relative">
+                    <div class="number-circle mb-3">2</div>
+                    <h5 class="fw-bold text-purple">מוסיפים חלבון</h5>
+                    <p class="text-muted small">ביצה, גבינה, טונה, עוף, טופו, עדשים או ממרח קטניות.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="white-card p-4 h-100 position-relative">
+                    <div class="number-circle mb-3">3</div>
+                    <h5 class="fw-bold text-purple">מכניסים צבע</h5>
+                    <p class="text-muted small">חסה, עגבנייה, מלפפון, פלפל או ירקות קלויים.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="white-card p-4 h-100 position-relative">
+                    <div class="number-circle mb-3">4</div>
+                    <h5 class="fw-bold text-purple">מתאימים לילד</h5>
+                    <p class="text-muted small">הכריך הבריא ביותר הוא זה שיחזור מהקופסה רק בתור פירורים.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. רשת הכריכים הבריאים (16 כריכים) -->
+    <section id="sandwich-grid" class="container text-center my-5 py-5">
+        <span class="badge bg-light text-success fw-bold px-3 py-2 rounded-pill mb-3 border border-success-subtle">לגזור ולשמור</span>
+        <h2 class="text-purple fw-bold mb-2">16 כריכים בריאים, מזינים ומאוזנים</h2>
+        <p class="text-muted mb-4 small">אפשר לסנן לפי סוג, לבחור כמה מועדפים ולצור רוטציה שבועית. כמויות החלבון הן הערכות ועשויות להשתנות לפי המוצר וגודל המנה.</p>
+
+        <!-- כפתורי סינון -->
+        <div class="d-flex justify-content-center gap-2 mb-5 flex-wrap">
+            <button class="btn btn-purple-pill active px-4 py-1">הכל</button>
+            <button class="btn btn-outline-secondary rounded-pill px-4 py-1">חלבי</button>
+            <button class="btn btn-outline-secondary rounded-pill px-4 py-1">ביצים</button>
+            <button class="btn btn-outline-secondary rounded-pill px-4 py-1">דגים ובשר</button>
+            <button class="btn btn-outline-secondary rounded-pill px-4 py-1">טבעוני</button>
         </div>
 
-    </div>
+        <!-- גריד כריכים -->
+        <div class="row row-cols-1 row-cols-md-3 g-4 text-start">
+            <!-- כריך 1 -->
+            <div class="col">
+                <div class="white-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success-subtle text-success mb-2">כ-15 גרם חלבון</span>
+                        <h5 class="fw-bold text-purple">צפתית, אבוקדו וביצה</h5>
+                        <p class="text-muted small">לחם מלא, גבינה צפתית 5%, רבע אבוקדו, ביצה קשה, חסה ועגבניית שרי.</p>
+                    </div>
+                    <span class="badge bg-light text-muted w-auto align-self-start">עשיר ומשביע</span>
+                </div>
+            </div>
+            <!-- כריך 2 -->
+            <div class="col">
+                <div class="white-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success-subtle text-success mb-2">כ-8 גרם חלבון</span>
+                        <h5 class="fw-bold text-purple">סביח מאוזן</h5>
+                        <p class="text-muted small">לחם מלא, כף טחינה, ביצה קשה, חציל קלוי, עגבנייה, חסה ומלפפון חמוץ.</p>
+                    </div>
+                    <span class="badge bg-light text-muted w-auto align-self-start">קלאסיקה בקופסה</span>
+                </div>
+            </div>
+            <!-- כריך 3 -->
+            <div class="col">
+                <div class="white-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success-subtle text-success mb-2">כ-8 גרם חלבון</span>
+                        <h5 class="fw-bold text-purple">גבינה וירקות קלילים</h5>
+                        <p class="text-muted small">לחם מלא, גבינת שמנת 5% או פסטו, פלפל או חציל קלוי, גבינה צפתית ועלי רוקט.</p>
+                    </div>
+                    <span class="badge bg-light text-muted w-auto align-self-start">צבעוני במיוחד</span>
+                </div>
+            </div>
+            <!-- כריך 4 -->
+            <div class="col">
+                <div class="white-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success-subtle text-success mb-2">כ-10 גרם חלבון</span>
+                        <h5 class="fw-bold text-purple">גבינה צהובה</h5>
+                        <p class="text-muted small">לחם מלא, מריחה של גבינה לבנה 5%, פרוסת גבינה צהובה 9%, חמאה, עגבנייה ומלפפון.</p>
+                    </div>
+                    <span class="badge bg-light text-muted w-auto align-self-start">ידידותי לילדים</span>
+                </div>
+            </div>
+            <!-- כריך 5 -->
+            <div class="col">
+                <div class="white-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success-subtle text-success mb-2">כ-12 גרם חלבון</span>
+                        <h5 class="fw-bold text-purple">אבוקדו, צפתית וביצה</h5>
+                        <p class="text-muted small">לחם מלא, אבוקדו רך, גבינה צפתית, ביצה קשה, חסה ועגבנייה.</p>
+                    </div>
+                    <span class="badge bg-light text-muted w-auto align-self-start">שומן טוב + חלבון</span>
+                </div>
+            </div>
+            <!-- כריך 6 -->
+            <div class="col">
+                <div class="white-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success-subtle text-success mb-2">כ-25 גרם חלבון</span>
+                        <h5 class="fw-bold text-purple">עוף או בקר</h5>
+                        <p class="text-muted small">לחם מלא, מריחה קלה של מיונז או חרדל, חזה עוף או פסטרמה מחזה בקר, חסה, עגבנייה ומלפפון.</p>
+                    </div>
+                    <span class="badge bg-light text-muted w-auto align-self-start">הכי עשיר בחלבון</span>
+                </div>
+            </div>
+            <!-- כריך 7 -->
+            <div class="col">
+                <div class="white-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success-subtle text-success mb-2">כ-15-8 גרם חלבון</span>
+                        <h5 class="fw-bold text-purple">חביתה</h5>
+                        <p class="text-muted small">לחם מלא, גבינת שמנת 5%, חביתה מביצה אחת או שתים, חסה ועגבנייה.</p>
+                    </div>
+                    <span class="badge bg-light text-muted w-auto align-self-start">מהיר ומוכר</span>
+                </div>
+            </div>
+            <!-- כריך 8 -->
+            <div class="col">
+                <div class="white-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success-subtle text-success mb-2">כ-15 גרם חלבון</span>
+                        <h5 class="fw-bold text-purple">סלט טונה</h5>
+                        <p class="text-muted small">לחם מלא, חצי קופסת טונה עם פלפל אדום ובצל, מריחה דקה של מיונז, מלפפון חמוץ ועגבנייה.</p>
+                    </div>
+                    <span class="badge bg-light text-muted w-auto align-self-start">עסיסי ופרקטי</span>
+                </div>
+            </div>
+            <!-- כריך 9 -->
+            <div class="col">
+                <div class="white-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success-subtle text-success mb-2">כ-18 גרם חלבון</span>
+                        <h5 class="fw-bold text-purple">סלמון וגבינת שמנת</h5>
+                        <p class="text-muted small">לחם מלא, גבינת שמנת 5%, פרוסות דקות של סלמון, מלפפון ועלי רוקט.</p>
+                    </div>
+                    <span class="badge bg-light text-muted w-auto align-self-start">ליום קצת חגיגי</span>
+                </div>
+            </div>
+            <!-- כריך 10 -->
+            <div class="col">
+                <div class="white-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success-subtle text-success mb-2">כ-10 גרם חלבון</span>
+                        <h5 class="fw-bold text-purple">סלט ביצים</h5>
+                        <p class="text-muted small">לחם מלא, סלט מביצה וחצי, כפית מיונז ובצל ירוק, לצד מלפפון, עגבנייה וחסה.</p>
+                    </div>
+                    <span class="badge bg-light text-muted w-auto align-self-start">רך ונוח לאכילה</span>
+                </div>
+            </div>
+            <!-- כריך 11 -->
+            <div class="col">
+                <div class="white-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success-subtle text-success mb-2">כ-10 גרם חלבון</span>
+                        <h5 class="fw-bold text-purple">קציצות עדשים</h5>
+                        <p class="text-muted small">לחם מלא, טחינה, קציצות עדשים ביתיות, פרוסות קישואים ופלפלים קלויים.</p>
+                    </div>
+                    <span class="badge bg-light text-muted w-auto align-self-start">טבעוני ומזין</span>
+                </div>
+            </div>
+            <!-- כריך 12 -->
+            <div class="col">
+                <div class="white-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success-subtle text-success mb-2">כ-15 גרם חלבון</span>
+                        <h5 class="fw-bold text-purple">טונה מהירה</h5>
+                        <p class="text-muted small">לחם מלא, חצי קופסת טונה, מריחה דקה של מיונז, חסה, עגבנייה וחמוצים.</p>
+                    </div>
+                    <span class="badge bg-light text-muted w-auto align-self-start">כשאין זמן בבוקר</span>
+                </div>
+            </div>
+            <!-- כריך 13 -->
+            <div class="col">
+                <div class="white-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success-subtle text-success mb-2">כ-12 גרם חלבון</span>
+                        <h5 class="fw-bold text-purple">גבינת חמד ופסטו</h5>
+                        <p class="text-muted small">לחם מלא, מריחה קלה של פסטו, גבינת חמד 5%, עגבנייה וחסה.</p>
+                    </div>
+                    <span class="badge bg-light text-muted w-auto align-self-start">מעט רכיבים, הרבה טעם</span>
+                </div>
+            </div>
+            <!-- כריך 14 -->
+            <div class="col">
+                <div class="white-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success-subtle text-success mb-2">כ-8 גרם חלבון</span>
+                        <h5 class="fw-bold text-purple">גבינה וחצילים</h5>
+                        <p class="text-muted small">לחם מלא, חציל קלוי, גבינת חמד 5%, עלי רוקט, עגבנייה ובצל סגול.</p>
+                    </div>
+                    <span class="badge bg-light text-muted w-auto align-self-start">טעם של בית</span>
+                </div>
+            </div>
+            <!-- כריך 15 -->
+            <div class="col">
+                <div class="white-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success-subtle text-success mb-2">כ-10 גרם חלבון</span>
+                        <h5 class="fw-bold text-purple">קוטג' ופלפלים</h5>
+                        <p class="text-muted small">לחם מלא, שתי כפות קוטג' 5% ופרוסות דקות של פלפלים צבעוניים.</p>
+                    </div>
+                    <span class="badge bg-light text-muted w-auto align-self-start">פשוט, טרי ומאזן</span>
+                </div>
+            </div>
+            <!-- כריך 16 -->
+            <div class="col">
+                <div class="white-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success-subtle text-success mb-2">משתנה לפי הכמות</span>
+                        <h5 class="fw-bold text-purple">חמאת בוטנים ובננה</h5>
+                        <p class="text-muted small">לחם מלא, שכבה דקה של חמאת בוטנים טבעית וחצי בננה פרוסה.</p>
+                    </div>
+                    <span class="badge bg-light text-muted w-auto align-self-start">מתוק שנותן אנרגיה</span>
+                </div>
+            </div>
+        </div>
 
-    <!-- JS של Bootstrap 5 -->
+        <!-- תיבת המחולל האקראי -->
+        <div class="dark-purple-card my-5 p-4 text-center">
+            <h4 class="fw-bold text-white mb-2">לא יודעים מה להכין מחר?</h4>
+            <p class="text-white-50 small mb-3">לחצו וקבלי רעיון אקראי מתוך הרשימה.</p>
+            <button class="btn btn-info-custom fw-bold px-4 py-2 mb-3">תבחרו לי כריך</button>
+            <div class="white-card p-3 max-w-md mx-auto text-dark fw-bold text-center">
+                קוטג' ופלפלים – לחם מלא, שתי כפות קוטג' 5% ופרוסות דקות של פלפלים צבעוניים.
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. שילוב הבוקר של HoldOn (שייק + כריך) -->
+    <section id="holdon-morning" class="container my-5 py-5">
+        <div class="white-card p-4 p-md-5">
+            <div class="row align-items-center">
+                <!-- טקסט ימין -->
+                <div class="col-lg-7 text-start">
+                    <span class="badge bg-light text-success fw-bold px-3 py-2 rounded-pill mb-3 border border-success-subtle">הבוקר המאוזן של HoldOn</span>
+                    <h2 class="text-purple fw-bold mb-3">שייק ארוחה בבוקר + כריך מאוזן לבית הספר</h2>
+                    <div class="green-cream-card p-3 mb-4">
+                        <h5 class="fw-bold text-success mb-0">זה שילוב שנותן לילד בסיס תזונתי טוב יותר לאנרגיה, לשובע ולריכוז לאורך יום הלימודים.</h5>
+                    </div>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2">✔️ <strong>בבית:</strong> שייק ארוחה מזין, טעים ומהיר – במקום לצאת בלי לאכול.</li>
+                        <li class="mb-2">✔️ <strong>בבית הספר:</strong> כריך מלא עם חלבון וירקות – כדי להמשיך את הבוקר בצורה מאוזנת.</li>
+                        <li class="mb-2">✔️ <strong>בשגרה:</strong> פחות אלתורים של הרגע האחרון ויותר ודאות לגבי מה שהילד אכל.</li>
+                    </ul>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <a href="#" class="btn btn-purple-pill">לשייק הארוחה בחנות</a>
+                        <a href="#" class="btn btn-outline-purple">לגרסה הטבעונית</a>
+                    </div>
+                    <p class="text-muted small mt-3 mb-0">* את השייק מכינים לפי הוראות האריזה ובהתאם לגיל, לצרכים ולהעדפות של הילד.</p>
+                </div>
+                <!-- תמונה שמאל -->
+                <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                    <img src="https://via.placeholder.com/400x500.png?text=HoldOn+Shake+Product" alt="מוצרי HoldOn" class="img-fluid rounded-4 shadow-sm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. אזור השימוש והמוצרים התחתון -->
+    <section id="products" class="container my-5 py-5">
+        <!-- פאנל ירוק כהה -->
+        <div class="green-dark-card p-4 text-center text-white mb-5">
+            <span class="badge bg-light text-success fw-bold px-3 py-1 rounded-pill mb-2">פשוט להכין, קל לקחת, נעים להתמיד</span>
+            <h3 class="fw-bold mb-1">אותה נוסחה עובדת מצוין גם ליום עבודה עמוס</h3>
+            <p class="text-white-50 small mb-0">שייק ארוחה בבוקר וכריך מזין בתיק יכולים לחסוך גם למבוגרים את הוויכוח על ארוחת הצהריים.</p>
+        </div>
+
+        <!-- קופסת המלצה -->
+        <div class="white-card p-4 mb-5 text-center">
+            <h4 class="text-purple fw-bold mb-2">כבר משתמשים במוצרי השייק של Hold On בבית?</h4>
+            <p class="text-muted small max-w-2xl mx-auto mb-0">אם אתם כבר משתמשים בשייק הארוחה של Hold On ומכינים למתבגרים (או WAKE שייק לילדים בלי קפאין) כחלק מארוחת הבוקר – השילוב לילדים בוגרים של WAKE שייק יחד עם כריך מזין יכול לספק בסיס מצוין ליום הלימודים.</p>
+        </div>
+
+        <!-- מוצרים להזמנה -->
+        <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center mb-5">
+            <div class="col-md-5">
+                <div class="white-card p-4 text-center h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <img src="https://via.placeholder.com/250x250.png?text=Bundle+Regular" alt="מארז שייק" class="img-fluid mb-3">
+                        <h5 class="fw-bold text-purple">מארז שייק ארוחה מלאה</h5>
+                    </div>
+                    <a href="#" class="btn btn-purple-pill align-self-center mt-3">לצפייה במארז ←</a>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="white-card p-4 text-center h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <img src="https://via.placeholder.com/250x250.png?text=Bundle+Vegan" alt="מארז טבעוני" class="img-fluid mb-3">
+                        <h5 class="fw-bold text-purple">מארז שייק ארוחה מלאה טבעוני</h5>
+                    </div>
+                    <a href="#" class="btn btn-purple-pill align-self-center mt-3">לצפייה במארז ←</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- קריאה לפעולה סופית (סגול כהה) -->
+        <div class="dark-purple-card p-4 p-md-5 text-center text-white">
+            <h3 class="fw-bold mb-3">מחר בבוקר יכול להיראות אחרת</h3>
+            <p class="text-white-50 mb-4 max-w-xl mx-auto">מתחילים בבית עם שייק ארוחה מזין, שולחים לבית הספר כריך מאוזן – ונותנים לילדים בסיס טוב יותר ליום של למידה, אנרגיה וריכוז.</p>
+            <div class="d-flex justify-content-center gap-3 align-items-center flex-wrap mb-3">
+                <div class="d-flex align-items-center gap-2">
+                    <span class="fs-1">🥪</span>
+                    <span class="fs-3 fw-bold">+</span>
+                    <span class="fs-1">🥤</span>
+                </div>
+                <div class="d-flex gap-2">
+                    <a href="#" class="btn btn-info-custom fw-bold">אני רוצה את שייק הארוחה</a>
+                    <a href="#" class="btn btn-outline-light rounded-pill">לשייק הארוחה הטבעוני</a>
+                </div>
+            </div>
+            <p class="text-white-50 small mb-0">בוקר מאוזן יותר</p>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
