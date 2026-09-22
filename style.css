@@ -93,47 +93,40 @@ h1 .highlight {
     font-weight: bold;
 }
 
-/* --- עיצוב כרטיסיות ופאנלים בחלק התחתון --- */
+/* --- עיצוב האזור התחתון --- */
 
 .info-card-container {
     background-color: white;
     border-radius: 20px;
-    box-shadow: var(--card-shadow);
-    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    padding: 35px 25px;
     height: 100%;
 }
 
 .card-info-title {
-    color: #222;
-    font-weight: 700;
-    font-size: 1.2rem;
+    color: #1a237e;
+    font-weight: 800;
+    font-size: 1.25rem;
 }
 
 .card-info-text {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     line-height: 1.6;
 }
 
 .info-panel-blue {
-    background-color: #1a237e;
+    background-color: #1a1e43; /* סגול כהה כמו בתמונה */
     color: white;
-    border-radius: 20px;
-    padding: 15px 30px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    box-shadow: var(--card-shadow);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 .info-panel-cream {
-    background-color: #fffefb;
-    color: var(--text-color);
+    background-color: #f2f9f6; /* רקע ירקרק-קרם בהיר */
+    border: 1px solid #d2e9e1;
     border-radius: 20px;
-    padding: 30px;
-    border: 2px solid #ddd;
-    box-shadow: var(--card-shadow);
-    margin-top: 30px;
 }
 
 .panel-title {
-    color: var(--primary-color);
+    color: #0f5132; /* ירוק כהה */
 }
