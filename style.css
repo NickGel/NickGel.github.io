@@ -1,0 +1,139 @@
+:root {
+    --primary-color: #4a148c; /* סגול כהה (HoldOn) */
+    --accent-color: #00c853;  /* ירוק-טורקיז */
+    --text-color: #333;
+    --bg-light: #fdfcf9;       /* רקע קרם בהיר */
+    --card-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* לוגו ותפריט ניווט */
+.navbar-brand img {
+    max-height: 40px;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.nav-link {
+    color: var(--text-color) !important;
+    font-size: 0.9rem;
+    margin: 0 5px;
+}
+
+.btn-nav-primary {
+    background-color: var(--primary-color);
+    color: white !important;
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+
+/* כותרות בסגנון האתר */
+h1.main-title, h2.main-title {
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+h1 .highlight {
+    color: var(--accent-color);
+}
+
+.hero-badge {
+    border: 1px solid #ddd;
+}
+
+/* כרטיסייה ראשית (אזור הגיבור) */
+.card-container {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    padding: 30px;
+    text-align: center;
+}
+
+.placeholder-image {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #eee;
+    border-radius: 15px;
+}
+
+/* כפתורי סינון */
+.category-filter {
+    background-color: #eee;
+    border: none;
+    border-radius: 20px;
+    color: #555;
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    margin: 5px;
+}
+
+.category-filter.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* כפתור קריאה לפעולה ראשי */
+.btn-cta-main {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 25px;
+    padding: 10px 35px;
+    font-weight: bold;
+}
+
+/* --- עיצוב כרטיסיות ופאנלים בחלק התחתון --- */
+
+.info-card-container {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    padding: 25px;
+    height: 100%;
+}
+
+.card-info-title {
+    color: #222;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.card-info-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.info-panel-blue {
+    background-color: #1a237e;
+    color: white;
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: var(--card-shadow);
+}
+
+.info-panel-cream {
+    background-color: #fffefb;
+    color: var(--text-color);
+    border-radius: 20px;
+    padding: 30px;
+    border: 2px solid #ddd;
+    box-shadow: var(--card-shadow);
+    margin-top: 30px;
+}
+
+.panel-title {
+    color: var(--primary-color);
+}
