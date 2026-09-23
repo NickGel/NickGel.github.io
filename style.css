@@ -1,126 +1,547 @@
 :root {
-    --purple-main: #2b124c;
-    --purple-card-bg: #1e1b4b;
-    --green-accent: #00c853;
-    --green-light-bg: #f2f9f6;
-    --green-dark-bg: #064e3b;
-    --bg-page: #fdfbf7;
-    --text-dark: #2d3748;
+    --primary-color: #4a148c; /* סגול כהה (HoldOn) */
+    --accent-color: #00c853;  /* ירוק-טורקיז */
+    --text-color: #333333;
+    --bg-light: #fdfcf9;       /* רקע קרם בהיר */
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 body {
-    background-color: var(--bg-page);
-    color: var(--text-dark);
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    direction: rtl;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* טקסט כותרת סגול */
-.text-purple {
-    color: var(--purple-main) !important;
+/* --- לוגו ותפריט ניווט --- */
+.navbar-brand img {
+    max-height: 40px;
 }
 
-.main-title {
-    color: var(--purple-main);
+.logo-text {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
-.main-title .highlight {
-    color: var(--green-accent);
+.nav-link {
+    color: var(--text-color) !important;
+    font-size: 0.9rem;
+    margin: 0 5px;
 }
 
-/* כרטיסיות לבנות עם צל עדין */
-.white-card {
-    background-color: #ffffff;
+.btn-nav-primary {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    padding: 5px 20px;
 }
 
-/* כרטיסיות סגולות כהות */
-.dark-purple-card {
-    background-color: var(--purple-card-bg);
+/* --- כותרות ובאדג'ים --- */
+h1.main-title, h2.main-title, .text-purple {
+    color: var(--primary-color);
+}
+
+h1 .highlight {
+    color: var(--accent-color);
+}
+
+.hero-badge {
+    border: 1px solid #ddd;
+}
+
+/* --- כפתורים כלליים --- */
+.btn-cta-main {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 25px;
+    padding: 10px 35px;
+    font-weight: bold;
+}
+
+.category-filter {
+    background-color: #eee;
+    border: none;
     border-radius: 20px;
+    color: #555;
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    margin: 5px;
+}
+
+.category-filter.active {
+    background-color: var(--primary-color);
     color: #ffffff;
 }
 
-/* כרטיסיית ירוק-קרם בהיר */
-.green-cream-card {
-    background-color: var(--green-light-bg);
-    border: 1px solid #d2e9e1;
-    border-radius: 16px;
+/* --- כרטיסיית כריך מעוצבת (Hero Sandwich Card) --- */
+.sandwich-hero-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: var(--card-shadow);
+    padding: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* כרטיסיית ירוק כהה */
-.green-dark-card {
-    background-color: var(--green-dark-bg);
+.sandwich-hero-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.sandwich-hero-card img {
+    border-radius: 18px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- כרטיסיות מידע (Info Cards) --- */
+.info-card {
+    background-color: #ffffff;
     border-radius: 20px;
+    padding: 30px 25px;
+    height: 100%;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* עיגולי מספרים בשלבים */
-.number-circle {
-    width: 42px;
-    height: 42px;
-    background-color: var(--purple-card-bg);
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.card-title-custom {
+    color: #1a1040;
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+.card-text-custom {
+    color: #6c757d;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+/* האייקונים העגולים בתוך הכרטיסיות */
+.icon-wrapper {
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    font-size: 1.4rem;
 }
 
-/* כפתורים */
-.btn-purple-pill {
-    background-color: var(--purple-main);
-    color: #ffffff !important;
-    border-radius: 30px;
-    padding: 8px 24px;
+/* צבעי רקע מגוונים לאייקונים */
+.icon-bg-orange { background-color: #ffefe5; }
+.icon-bg-green  { background-color: #e8f8f2; }
+.icon-bg-pink   { background-color: #fce4ec; }
+.icon-bg-blue   { background-color: #e3f2fd; }
+.icon-bg-purple { background-color: #f3e5f5; }
+.icon-bg-red    { background-color: #ffebee; }
+
+/* --- חיצי מעבר בין כרטיסיות (Section 3) --- */
+.step-arrow {
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+    color: var(--accent-color);
+    font-size: 1.8rem;
     font-weight: bold;
+    z-index: 10;
+}
+
+/* --- סרגל הנוסחה הכחול/סגול הכהה --- */
+.formula-banner {
+    background-color: #231f62;
+    color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(35, 31, 98, 0.15);
+}
+
+.formula-title {
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.formula-subtitle {
+    font-size: 0.88rem;
+    opacity: 0.85;
+}
+
+.formula-plus {
+    color: #4dd0e1; /* צבע טורקיז-תכלת לסימני הפלוס */
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* --- באנר כהה עם פס צד ירוק (Section 3) --- */
+.dark-accent-card {
+    background-color: #1a164b;
+    border-radius: 20px;
+    border-right: 6px solid var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    padding: 35px 30px !important;
+}
+
+.leading-relaxed {
+    line-height: 1.7;
+}
+
+/* --- באנר סיכום ירוק תחתון --- */
+.green-highlight-box {
+    background-color: #e8f8f5;
+    border: 1.5px solid #b2dfdb;
+    border-radius: 20px;
+    color: #1b5e20;
+    line-height: 1.7;
+}
+
+.highlight-text-green {
+    color: #00897b;
+}
+
+/* --- עיצובים ייעודיים ל-Section 4 --- */
+
+/* רקע ירוק עדין לבאנר הפנימי */
+.bg-light-green-custom {
+    background-color: #e8f8f5;
+    border-right: 4px solid var(--accent-color);
+}
+
+/* רשימת יתרונות עם וי */
+.check-list li {
+    color: #4a5568;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* כפתור ירוק ראשי */
+.btn-success-custom {
+    background-color: var(--accent-color);
+    color: #ffffff !important;
     border: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-success-custom:hover {
+    background-color: #00b046;
+    transform: translateY(-2px);
+    color: #ffffff !important;
+}
+
+/* כפתור מתאר סגול (גרסה טבעונית) */
+.btn-outline-purple-custom {
+    background-color: #ffffff;
+    color: var(--primary-color) !important;
+    border: 2px solid var(--primary-color);
     transition: all 0.2s ease;
 }
 
-.btn-purple-pill:hover {
-    background-color: #3b1968;
+.btn-outline-purple-custom:hover {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+    transform: translateY(-2px);
 }
 
-.btn-outline-purple {
-    border: 1px solid var(--purple-main);
-    color: var(--purple-main);
+/* כרטיסיית הצגת המוצר בצד שמאל */
+.product-showcase-card {
+    background: #f7f3fd;
+    border-radius: 28px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(74, 20, 140, 0.05);
+}
+
+.product-img-wrapper img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* --- עיצובים ייעודיים ל-Section 5 (גריד 16 הכריכים) --- */
+
+/* תגית עליונה "לגזור ולשמור" */
+.badge-top-green {
+    display: inline-block;
+    background-color: #ffffff;
+    color: var(--accent-color);
+    border: 1.5px solid #b2dfdb;
+    border-radius: 50px;
+    padding: 6px 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* כפתורי סינון עגולים */
+.btn-filter {
+    background-color: #ffffff;
+    color: var(--primary-color);
+    border: 1px solid #e0e0e0;
     border-radius: 30px;
     padding: 8px 24px;
-    font-weight: bold;
-    background: transparent;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
 }
 
-.btn-outline-purple:hover {
-    background-color: var(--purple-main);
-    color: #ffffff;
+.btn-filter.active, .btn-filter:hover {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+    border-color: var(--primary-color);
+}
+
+/* כרטיסיית כריך בתוך הגריד */
+.sandwich-card {
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sandwich-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* תג חלבון ירוק עדין בצד התיבה */
+.badge-protein {
+    background-color: #e8f8f5;
+    color: #00897b;
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* אייקון בראש כרטיסיית כריך */
+.card-icon {
+    font-size: 1.6rem;
+}
+
+/* טקסט/תגית תחתונה בכרטיסייה */
+.card-footer-tag {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* תיבה סגולה תחתונה (מחולל אקראי) */
+.dark-purple-card {
+    background-color: var(--primary-color);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(74, 20, 140, 0.2);
 }
 
 .btn-info-custom {
-    background-color: #06b6d4;
-    color: white;
-    border-radius: 30px;
+    background-color: #4dd0e1;
+    color: #0d47a1;
+    border-radius: 25px;
     border: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .btn-info-custom:hover {
-    background-color: #0891b2;
-    color: white;
+    transform: scale(1.03);
+    background-color: #26c6da;
+    color: #0d47a1;
 }
 
-/* עזרי רוחב ומקסימום */
-.max-w-md {
-    max-width: 450px;
+/* --- Section: באנר ירוק למבוגרים / יום עבודה עמוס --- */
+.adults-banner-section {
+    background-color: #007a5e; /* ירוק כהה עמוק */
+    border-radius: 0;
 }
 
-.max-w-xl {
-    max-width: 650px;
+/* תגית עליונה "וזה ממש לא רק לילדים" */
+.badge-rounded-light {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #007a5e;
+    border-radius: 50px;
+    padding: 6px 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
 }
 
-.max-w-2xl {
-    max-width: 750px;
+/* תיבה שקופה וממוסגרת בצד שמאל */
+.inner-glass-card {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+}
+
+/* --- Section: מוצרי Hold On בבית --- */
+
+/* באנר עליון */
+.product-info-banner {
+    background-color: #f7fbfc;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
+}
+
+.spoon-icon {
+    font-size: 1.4rem;
+    transform: rotate(-15deg);
+    display: inline-block;
+}
+
+/* כרטיסיית מוצר */
+.product-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* מעטפת התמונה - גודל מלא ללא חיתוך */
+.product-img-card-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.product-full-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 16px;
+}
+
+/* כפתור מעבר ללינק */
+.btn-product-action {
+    background-color: var(--accent-color, #009688);
+    color: #ffffff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-product-action:hover {
+    background-color: #00796b;
+    color: #ffffff;
+    transform: scale(1.02);
+}
+
+/* קישור "לצפייה בחנות" */
+.store-link {
+    color: var(--accent-color, #009688);
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.store-link:hover {
+    color: #004d40;
+}
+
+.store-link .arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.store-link:hover .arrow {
+    transform: translateX(-4px);
+}
+
+.max-w-4xl {
+    max-width: 900px;
+}
+
+/* --- Section: באנר סיום (מחר בבוקר יכול להיראות אחרת) --- */
+.final-banner {
+    background-color: #231d61; /* סגול-כחול כהה ועמוק */
+    border-radius: 28px;
+    box-shadow: 0 15px 35px rgba(35, 29, 97, 0.25);
+}
+
+/* גודל האייקונים (כריך ושייק) */
+.banner-emoji {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+/* סימן הפלוס */
+.plus-symbol {
+    font-size: 2.2rem;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+/* כפתור ירוק מלא */
+.btn-cta-green {
+    background-color: var(--accent-color, #00c853);
+    color: #ffffff !important;
+    border-radius: 50px;
+    padding: 12px 30px;
+    border: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.btn-cta-green:hover {
+    background-color: #00b046;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 200, 83, 0.3);
+}
+
+/* כפתור מתאר לבן (לשייק הטבעוני) */
+.btn-cta-outline-white {
+    background-color: transparent;
+    color: #ffffff !important;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    padding: 10px 28px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.btn-cta-outline-white:hover {
+    background-color: #ffffff;
+    color: #231d61 !important;
+    transform: translateY(-2px);
+}
+
+/* טקסט הדיסקליימר בתחתית */
+.disclaimer-text {
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+/* --- התאמה לרשתות ומסכי נייד --- */
+@media (max-width: 991px) {
+    .adults-banner-section .text-end {
+        text-align: center !important;
+    }
+    .final-banner .text-lg-end {
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .dark-accent-card {
+        border-right: none;
+        border-top: 6px solid var(--accent-color);
+    }
+    .bg-light-green-custom {
+        border-right: none;
+        border-top: 4px solid var(--accent-color);
+    }
 }
